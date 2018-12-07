@@ -54,7 +54,7 @@ def train_with_data():
     next(spamreader, None)  # skip the headers
 
     for row in spamreader:
-        t = time.strptime(row[2], "%Y/%m/%d %H:%M:%S")
+        t = time.strptime(row[2], "%Y-%m-%d %H:%M:%S")
         if row[0] != lastcase:
             casestarttime = t
             lasteventtime = t
@@ -157,7 +157,7 @@ def train_with_data():
     casestarttime = None
     lasteventtime = None
     for row in spamreader:
-        t = time.strptime(row[2], "%Y/%m/%d %H:%M:%S")
+        t = time.strptime(row[2], "%Y-%m-%d %H:%M:%S")
         if row[0] != lastcase:
             casestarttime = t
             lasteventtime = t
